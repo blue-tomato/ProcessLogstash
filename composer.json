@@ -1,0 +1,27 @@
+{
+    "name": "blue-tomato/process-logstash",
+    "type": "pw-module",
+    "description": "Send ProcessWire Logs to Logstash/Kibana",
+    "keywords": [ "logstash", "kibana", "logs", "processwire", "logging", "log"],
+    "homepage": "https://github.com/blue-tomato/ProcessLogstash/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Blue Tomato",
+            "email": "developer@blue-tomato.com",
+            "homepage": "https://github.com/blue-tomato"
+        },
+        {
+            "name": "ProcessLogstash Contributors",
+            "homepage": "https://github.com/blue-tomato/ProcessLogstash/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-curl": "*",
+        "hari/pw-module": "~1.0"
+    },
+    "require-dev": {
+      "processwire/processwire": ">=3.0.133"
+    }
+}
