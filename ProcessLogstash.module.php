@@ -63,8 +63,8 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
         $user = $users->getCurrentUser()->name;
         $url = $input->url();
 
-        if($options && $options["user"]) $user = $options["user"];
-        if($options && $options["url"]) $url = $options["url"];
+        if($options && isset($options["user"])) $user = $options["user"];
+        if($options && isset($options["url"])) $url = $options["url"];
         
         $logData = [
             "timestamp" => date('c'),
