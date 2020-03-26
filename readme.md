@@ -26,6 +26,12 @@ If you want to deactivate the logging you can set this also to `false`:
 
 - `$config->processLogstash = [ "endpoint" => false ]`
 
+If you want to add information about your server environment you can add following to the config.php:
+
+- `$config->processLogstash = [ "env" => "stage" ]`
+
+This will be added as "env" to your log messages.
+
 ### Add custom HTTP Header to the Request
 Some Logstash cloud providers like logit.io need an API Key in the HTTP Headers. You can add it with this way in the config.php
 

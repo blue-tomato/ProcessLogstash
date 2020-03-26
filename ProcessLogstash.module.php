@@ -8,7 +8,7 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
 		return array(
 			'title' => 'ProcessLogstash',
 			'class' => 'ProcessLogstash',
-			'version' => 100,
+			'version' => 101,
             'summary' => 'Send ProcessWire Logs to Logstash/Kibana',
             'href' => 'https://github.com/blue-tomato/ProcessLogstash/',
 			'singular' => true,
@@ -55,6 +55,7 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
 	{
         $users = Wire::getFuel('users');
         $input = Wire::getFuel('input');
+        $config = Wire::getFuel('config');
 
 		$name = $event->arguments(0);
 		$text = $event->arguments(1);
@@ -73,6 +74,10 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
             "url" => $url,
             "text" => $text
         ];
+
+        if(isset($config->processLogstash['env'])) {
+            $logData["env"] = $config->processLogstash['env'];
+        }
     
         $response = $this->sendData($logData);
 
