@@ -8,7 +8,7 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
 		return array(
 			'title' => 'ProcessLogstash',
 			'class' => 'ProcessLogstash',
-			'version' => 102,
+			'version' => 104,
             'summary' => 'Send ProcessWire Logs to Logstash/Kibana',
             'href' => 'https://github.com/blue-tomato/ProcessLogstash/',
 			'singular' => true,
@@ -101,7 +101,7 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
                     'Content-Type: application/json',
                     'LogType: ' . $data['logType']
                 ),
-                CURLOPT_CUSTOMREQUEST => "POST",
+                CURLOPT_CUSTOMREQUEST => "PUT",
                 CURLOPT_POSTFIELDS => json_encode($data, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES)
             );
 
