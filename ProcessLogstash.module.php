@@ -8,7 +8,7 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
 		return array(
 			'title' => 'ProcessLogstash',
 			'class' => 'ProcessLogstash',
-			'version' => 101,
+			'version' => 102,
             'summary' => 'Send ProcessWire Logs to Logstash/Kibana',
             'href' => 'https://github.com/blue-tomato/ProcessLogstash/',
 			'singular' => true,
@@ -109,10 +109,8 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
                 $curlConfig[CURLOPT_HTTPHEADER] = array_merge($curlConfig[CURLOPT_HTTPHEADER], $config->processLogstash['customHttpHeaders']);
             }
             
-            if($config->httpsProxy) {
-                $curlConfig[CURLOPT_PROXY] = $config->httpsProxy;
-            } else if($config->httpProxy) {
-                $curlConfig[CURLOPT_PROXY] = $config->httpProxy;
+            if(isset($config->processLogstash['proxy'])) {
+                $curlConfig[CURLOPT_PROXY] = $config->processLogstash['proxy'];
             }
 
             curl_setopt_array($ch, $curlConfig);

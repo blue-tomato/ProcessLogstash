@@ -40,8 +40,7 @@ Some Logstash cloud providers like logit.io need an API Key in the HTTP Headers.
 ### Request to Logstash throw a proxy server
 If you have your Server behind a proxy, you can add to your `config.php` file following properties:
 
-- `$config->httpProxy = "your-http-proxy-server.xyz:8888";`
-- `$config->httpsProxy = "your-https-proxy-server.xyz:5394";`
+- `$config->processLogstash['proxy'] = "http://your-http-proxy-server.xyz:8888";`
 
 ## Support
 
