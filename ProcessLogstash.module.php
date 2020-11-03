@@ -8,7 +8,7 @@ class ProcessLogstash extends WireData implements Module, ConfigurableModule
 		return array(
 			'title' => 'ProcessLogstash',
 			'class' => 'ProcessLogstash',
-			'version' => 104,
+			'version' => 105,
             'summary' => 'Send ProcessWire Logs to Logstash/Kibana',
             'href' => 'https://github.com/blue-tomato/ProcessLogstash/',
 			'singular' => true,
