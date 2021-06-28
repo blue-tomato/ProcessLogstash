@@ -1,6 +1,9 @@
 {
     "name": "blue-tomato/process-logstash",
-    "type": "pw-module",
+    "type": "processwire-module",
+    "extra": {
+        "installer-name": "ProcessLogstash"
+    },
     "description": "Send ProcessWire Logs to Logstash/Kibana",
     "keywords": [ "logstash", "kibana", "logs", "processwire", "logging", "log"],
     "homepage": "https://github.com/blue-tomato/ProcessLogstash/",
@@ -19,6 +22,6 @@
     "require": {
         "php": ">=7.0",
         "ext-curl": "*",
-        "hari/pw-module": "~1.0"
+        "composer/installers": "~1.0"
     }
 }
